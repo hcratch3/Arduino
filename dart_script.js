@@ -11,3 +11,11 @@ Blockly.Dart.setup = function(block, generator) {
     var code = '...\n';
     return code;
   };
+
+  Blockly.Dart.pinmode = function(block, generator) {
+    var text_pin = block.getFieldValue('pin');
+    var dropdown_mode = block.getFieldValue('Mode');
+    // TODO: Assemble dart into code variable.
+    var code = '...\n';
+    return code;
+  };
