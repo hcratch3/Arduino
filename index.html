@@ -421,49 +421,16 @@
                 <field name="pin">0</field>
                 <field name="Mode">INPUT</field>
             </block>
+            <block type="procedures_defnoreturn">
+                <field name="NAME">setup</field>
+                <comment pinned="false" h="80" w="160">Start Code</comment>
+            </block>
+            <block type="procedures_defnoreturn">
+                <field name="NAME">loop</field>
+                <comment pinned="false" h="80" w="160">Loop Code</comment>
+            </block>
         </category>
     </xml>
-
-    <!--<xml xmlns="https://developers.google.com/blockly/xml" id="startBlock" style="display: none">
-        <block type="setup" id="vc8$t^@~YAtVnQK?+f/o" x="13" y="63" />
-        <block type="loop" id="D^XhmHTxWz8s{OOAnDpM" x="163" y="63" />
-    </xml>-->
-
-    <script>
-        /**var workspace = Blockly.inject('blocklyDiv',
-            {
-                toolbox: toolbox,
-                collapse: false,
-                comments: true,
-                disable: false,
-                maxBlocks: Infinity,
-                trashcan: true,
-                horizontalLayout: false,
-                toolboxPosition: 'start',
-                css: true,
-                media: 'https://blockly-demo.appspot.com/static/media/',
-                rtl: false,
-                scrollbars: true,
-                sounds: true,
-                oneBasedIndex: true,
-                grid: {
-                    spacing: 20,
-                    length: 1,
-                    colour: '#888',
-                    snap: false
-                },
-                zoom: {
-                    controls: true,
-                    wheel: true,
-                    startScale: 1,
-                    maxScale: 3,
-                    minScale: 0.3,
-                    scaleSpeed: 1.2
-                }
-            });**/
-        //Blockly.Xml.domToWorkspace(document.getElementById('startBlocks'), workspace);
-        
-    </script>
     <script src="./worker/workspace.js"></script>
 </body>
 

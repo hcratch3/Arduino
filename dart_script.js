@@ -1,21 +1,7 @@
-Blockly.Dart.setup = function(block, generator) {
-    //var statements_setup = generator.statementToCode(block, 'setup');
-    // TODO: Assemble dart into code variable.
-    var code = 'void setup\n';
-    return code;
-  };
-  
-  Blockly.Dart.loop = function(block, generator) {
-    //var statements_void_loop = generator.statementToCode(block, 'void loop');
-    // TODO: Assemble dart into code variable.
-    var code = '...\n';
-    return code;
-  };
-
-  Blockly.Dart.pinmode = function(block, generator) {
-    var text_pin = block.getFieldValue('pin');
-    var dropdown_mode = block.getFieldValue('Mode');
-    // TODO: Assemble dart into code variable.
-    var code = '...\n';
-    return code;
-  };
+Blockly.Dart.pinmode = function (block, generator) {
+  var text_pin = block.getFieldValue('Pin');
+  var dropdown_mode = block.getFieldValue('Mode');
+  // TODO: Assemble dart into code variable.
+  var code = 'pinMode('+text_pin+','+dropdown_mode+')\n';
+  return code;
+};
