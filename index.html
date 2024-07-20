@@ -43,37 +43,53 @@
         pre code {
             white-space: pre-line;
         }
+
+        body {
+            background-color: #16979c;
+        }
+
+        #control {
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+
+        #file {
+            background-color: #16979c;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
-    <div id="blocklyDiv"><button onclick="generateCode()">Generate Code</button></div>
-    <div></div>
-    <form id="preview">
+    <div id="blocklyDiv"></div>
+    <div id="preview">
         <div>
-            <select id="language" disabled>
-                <option>JavaScript</option>
-                <option>Python</option>
-                <option>PHP</option>
-                <option>Lua</option>
-                <option selected>Dart</option>
-            </select>
-            <link rel="stylesheet" href="./styles/default.css">
-            <script src="./highlight.min.js"></script>
-
+            <link rel="stylesheet" href="./highlight/styles/default.css">
+            <script src="./highlight/highlight.min.js"></script>
             <script>hljs.highlightAll();</script>
-            <script>
-                //let source = document.getElementById('source');
-            </script>
+            <script src="./control.js"></script>
+            <div id="control">
+                <a style="font-size: xx-large;">Blockly for Arduino</a>
+                <select name="filetab" id="file" onchange="check(event)">
+                    <option value="file" selected>📁File</option>
+                    <option value="save">📝Save</option>
+                    <option value="load">📤Load</option>
+                    <option value="exit">🗑️Exit</option>
+                </select>
+            </div>
             <pre>
                 <code id="source" class="language-arduino hljs"></code>
             </pre>
         </div>
-    </form>
+    </div>
 
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
         <category name="Aluduino Functions" colour="#9fa55b">
             <block type="setup"></block>
+            <block type="loop"></block>
         </category>
         <category name="Aluduino Input/Output" colour="#9fa55b">
             <block type="pinmode">

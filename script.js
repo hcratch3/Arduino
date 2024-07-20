@@ -51,11 +51,25 @@ Blockly.Blocks['include'] = {
 
   Blockly.Blocks['setup'] = {
     init: function() {
-      this.appendStatementInput('void setup')
-        .appendField('void setup');
-      this.setTooltip('');
-      this.setHelpUrl('');
-      this.setColour(225);
-    }
+        this.appendStatementInput('void setup')
+          .appendField('void setup (')
+          .appendField(new Blockly.FieldTextInput(''), 'v')
+          .appendField(')');
+        this.setTooltip('');
+        this.setHelpUrl('');
+        this.setColour(225);
+      }
+  };
+  
+  Blockly.Blocks['loop'] = {
+    init: function() {
+        this.appendStatementInput('void loop')
+          .appendField('void loop (')
+          .appendField(new Blockly.FieldTextInput(''), 'v')
+          .appendField(')');
+        this.setTooltip('');
+        this.setHelpUrl('');
+        this.setColour(225);
+      }
   };
   

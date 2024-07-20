@@ -37,9 +37,19 @@ Blockly.Dart.finish = function(code) {
 };
 
 Blockly.Dart.setup = function(block) {
+  const text_v = block.getFieldValue('v');
   const statement_void_setup = Blockly.Dart.statementToCode(block, 'void setup');
 
   // TODO: Assemble dart into the code variable.
-  const code = 'void setup () {\n'+statement_void_setup+'\n}';
+  const code = 'void setup ('+text_v+') {\n'+statement_void_setup+'\n}';
+  return code;
+}
+
+Blockly.Dart.loop = function(block) {
+  const text_v = block.getFieldValue('v');
+  const statement_void_loop = Blockly.Dart.statementToCode(block, 'void loop');
+
+  // TODO: Assemble dart into the code variable.
+  const code = 'void loop ('+text_v+') {\n'+statement_void_loop+'\n}';
   return code;
 }
