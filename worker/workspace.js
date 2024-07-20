@@ -42,15 +42,8 @@ var workspace = Blockly.inject(blocklyDiv, options);
 
 /* Load blocks to workspace. */
 //Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
-
-var source = document.getElementById('source'); //ソース表示先
-var language = document.getElementById('language'); //言語選択のselectタグ
-var task = null; //１秒以内の連続実行を抑制
-var updatePreview = function () { //ソースコード更新
-	if (task != null) clearTimeout(task);
-	task = setTimeout(function () {
-		source.textContent = Blockly[language.value].workspaceToCode(workspace);
-	}, 1000);
-};
-workspace.addChangeListener(updatePreview); //ブロックが変更された時ソースコード更新
-language.addEventListener('change', updatePreview, false); //言語を切り替えた時ソースコード更新
+function generateCode() {
+	var code = Blockly.Dart.workspaceToCode(workspace);
+	document.getElementById('source').innerText = code;
+}
+workspace.addChangeListener(generateCode);
